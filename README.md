@@ -1,5 +1,5 @@
 # projeto_boliche
-=======
+
 # Criador
 Brenno Magalhães Gonçalves
 
