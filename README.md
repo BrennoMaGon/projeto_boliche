@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # projeto_boliche
 =======
 # Gerenciador de Boliche
@@ -59,4 +58,4 @@ Com os passos acima concluídos, você pode acessar a página principal do progr
 `localhost/app`
 
 Agora você deve conseguir utilizar a aplicação!
->>>>>>> 3490900 (Primeiro Commit)
+
