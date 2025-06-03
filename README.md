@@ -1,4 +1,4 @@
-# projeto_boliche
+# GERENCIADOR DE BOLICHE
 
 # Criador
 Brenno Magalhães Gonçalves
