@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Final</title>
+    <link rel="stylesheet" href="css.style/tabela.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<div id="customMessageModal" class="modal">
+    <div class="modal-content small-modal-content">
+        <span class="close-button" id="closeMessageModal">&times;</span>
+        <h2 id="messageModalTitle"></h2>
+        <p id="messageModalBody"></p>
+        <div class="modal-buttons" id="messageModalButtons">
+        </div>
+    </div>
+</div>
+<div id="editPlayerModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Editar Jogador</h2>
+        <input type="hidden" id="editPlayerId">
+        <label for="editPlayerName">Novo Nome:</label>
+        <input type="text" id="editPlayerName">
+        <button id="savePlayerEdit">Salvar</button>
+    </div>
+</div>
+
+<body>
+    <div class="container">
+        <h1>Ranking Final 🏆</h1>
+        <div id="tabelaRanking"></div>
+        
+        <div class="ranking-buttons">
+            <button onclick="window.location.href='index.html'" class="btn-ranking-base btn-nova-partida">Nova Partida</button>
+            
+            <button id="btnGerenciarJogadores" class="btn-ranking-base btn-gerenciar-jogadores">Gerenciar Jogadores</button>
+            
+            <button id="btnExcluirTabela" class="btn-ranking-base btn-excluir-tabela">Excluir Tabela</button>
+        </div>
+    </div>
+    <script src="js/modalHandler.js"></script>
+    <script src="js/ranking.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Verdana', sans-serif;
+    background-color: #222;
+    color: #f0f0f0; 
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    border: 5px solid #ffcc00; 
+    border-radius: 30px;
+    padding: 30px;
+    background-color: #555; 
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    padding: 12px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #ffcc00; 
+    border-radius: 5px;
+    color: #000; 
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #e6b800; 
+}
+#jogadores {
+    margin-top: 20px;
+    text-align: left;
+}
+.jogador {
+    margin: 5px 0;
+}
+.botao-acao {
+    background-color: #ffcc00;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    margin-left: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    transition: transform 0.2s;
+  }
+  
+  .botao-acao:hover {
+    transform: scale(1.1);
+  }
+  
+  .botao-acao i {
+    font-size: 14px;
+  }
+ .mensagem-erro {
+    color: yellow; 
+    margin-top: 10px; 
+    font-weight: bold;
+}

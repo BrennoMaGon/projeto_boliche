@@ -1,0 +1,400 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #222;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #555;
+    border: 5px solid #ffcc00;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ffcc00;
+}
+
+#jogada {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#jogada p {
+    margin: 8px 0 4px;
+    font-weight: bold;
+}
+
+#jogada input {
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+#jogada button {
+    padding: 12px;
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#jogada button:hover {
+    background-color: #e6b800;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    color: #fff;
+}
+
+th {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+td {
+    background-color: #444;
+}
+
+.coluna-visivel {
+    background-color: #ffff33 !important; /* amarelo neon */
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.oculto {
+    display: none;
+}
+
+.modal {
+    display: none; /* Mantém oculto por padrão */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);
+    /* Centralização apenas quando visível - será controlado via JS */
+}
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    /* ... outras propriedades ... */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+.modal-content {
+    background-color: #555; 
+    margin: auto;
+    padding: 30px;
+    border: 3px solid #ffcc00; 
+    width: 90%; 
+    max-width: 450px; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); 
+    position: relative;
+    color: #f0f0f0; 
+    animation: fadeIn 0.3s ease-out; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-button {
+    color: #ffcc00;
+    position: absolute; 
+    top: 15px;
+    right: 20px;
+    font-size: 36px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ffff33; 
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    color: #ffcc00; 
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.modal-content label {
+    display: block; 
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.modal-content input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 25px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    font-size: 18px; 
+    background-color: #444;
+    color: #f0f0f0;
+    outline: none; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus {
+    border-color: #ffff33; 
+    box-shadow: 0 0 10px rgba(255, 255, 51, 0.5); 
+}
+
+.modal-content button {
+    background-color: #ffcc00; 
+    color: #000;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content button:hover {
+    background-color: #e6b800; 
+    transform: translateY(-2px); 
+}
+
+.action-icons {
+    cursor: pointer;
+    margin: 0 8px; 
+    font-size: 1.3em; 
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.edit-icon {
+    color: #ffff33; 
+}
+
+.delete-icon {
+    color: #ff3333; 
+}
+
+.edit-icon:hover {
+    color: #e6b800; 
+    transform: scale(1.1); 
+}
+
+.delete-icon:hover {
+    color: #cc0000; 
+    transform: scale(1.1); 
+}
+
+.ranking-buttons {
+    text-align: center; /* Centraliza os botões */
+    margin-top: 30px; /* Espaço do topo */
+}
+
+/* Estilo base para os botões do ranking */
+.btn-ranking-base {
+    display: inline-block; 
+    margin: 0 10px; 
+    padding: 15px 30px;
+    background-color: #ffcc00; 
+    color: #000; 
+    font-weight: bold;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+    font-size: 20px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none; 
+    text-align: center;
+}
+
+.btn-ranking-base:hover {
+    background-color: #e6b800; 
+    transform: translateY(-3px); 
+}
+
+.btn-nova-partida {
+    background-color: #00ffcc;
+}
+
+.btn-gerenciar-jogadores {
+    background-color: #b3ff00;
+}
+
+.btn-excluir-tabela {
+    background-color: #dc3545; 
+}
+
+.btn-excluir-tabela:hover {
+    background-color: #c82333;
+    transform: translateY(-3px);
+}
+
+.hide-actions th:last-child,
+.hide-actions td:last-child {
+    display: none;
+}
+
+/* --- Novos estilos para o Modal Genérico --- */
+
+.small-modal-content {
+    max-width: 380px; 
+    padding: 25px;
+}
+
+.modal-content h2 {
+    font-size: 1.8em; 
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 15px;
+}
+
+.modal-buttons button {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    flex-grow: 1; 
+    max-width: 150px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* Cores específicas para botões de Sim/Não */
+.modal-buttons .btn-confirm-yes {
+    background-color: #28a745; 
+    color: #fff;
+}
+.modal-buttons .btn-confirm-yes:hover {
+    background-color: #218838;
+}
+
+.modal-buttons .btn-confirm-no {
+    background-color: #6c757d; 
+    color: #fff;
+}
+.modal-buttons .btn-confirm-no:hover {
+    background-color: #5a6268;
+}
+
+/* Estilo para modal de erro */
+.modal-content h2.error { /* Aplica ao H2 dentro de um modal-content com classe 'error' */
+    color: #dc3545; 
+}
+.modal-content p.error {
+    color: #dc3545;
+}
+/* Estilo para modal de sucesso */
+.modal-content h2.success { /* Aplica ao H2 dentro de um modal-content com classe 'success' */
+    color: #28a745; 
+}
+.modal-content p.success {
+    color: #28a745;
+}
+/* Estilo para modal de aviso */
+.modal-content h2.warning {
+    color: #ffc107; /* Amarelo/laranja */
+}
+.modal-content p.warning {
+    color: #ffc107;
+}
+/* Estilo para modal de informação */
+.modal-content h2.info {
+    color: #007bff; /* Azul */
+}
+.modal-content p.info {
+    color: #007bff;
+}
+.modal-prompt-input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: #444;
+    color: #f0f0f0;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-prompt-input:focus {
+    border-color: #ffff33;
+    box-shadow: 0 0 10px rgba(255, 255, 51, 0.5);
+}

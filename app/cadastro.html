@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Boliche 🎳</title>
+    <link rel="stylesheet" href="./css.style/cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css.style/tabela.css"> 
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Gerenciador de Boliche 🎳</h1>
+            <input type="text" id="nomeJogador" placeholder="Digite o nome do jogador">
+            <div id="mensagemErro" class="mensagem-erro"></div>
+            <button onclick="adicionarJogador()">Adicionar</button>
+
+            <ul id="listaJogadores"></ul>
+
+            <div class="configuracoes">
+                <label for="numRodadas">Número de Rodadas:</label>
+                <input type="number" id="numRodadas" min="1" max="10" value="10">
+            </div>
+
+            <button onclick="concluirCadastro()" class="concluir">Concluir</button>
+        </div>
+    </div>
+
+    <div id="customMessageModal" class="modal">
+        <div class="modal-content small-modal-content">
+            <span class="close-button" id="closeMessageModal">&times;</span>
+            <h2 id="messageModalTitle"></h2>
+            <p id="messageModalBody"></p>
+            <div class="modal-buttons" id="messageModalButtons">
+                </div>
+        </div>
+    </div>
+</div>
+    <script src="js/modalHandler.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
