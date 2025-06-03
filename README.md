@@ -31,7 +31,7 @@ O programa foi construído utilizando as seguintes tecnologias:
 
 ### Pré-requisitos
 
-Para que o programa funcione corretamente, você precisará ter o **XAMPP** instalado em sua máquina.
+Para que o programa funcione corretamente, você precisará ter o **XAMPP** ou outro ambiente de SERVIDOR LOCAL instalado em sua máquina.
 
 ---
 
