@@ -3,8 +3,6 @@
 # Criador
 Brenno Magalhães Gonçalves
 
-# Gerenciador de Boliche
-
 Bem-vindo(a) ao Gerenciador de Boliche! Este README irá guiá-lo(a) na configuração e execução do programa em sua máquina local.
 
 --- 
